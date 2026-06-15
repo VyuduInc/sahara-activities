@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Visual Daily Plan</title>
+  <style>
+    :root{
+      --pink:#ff7eb6;
+      --purple:#9b7bff;
+      --blue:#7ed3ff;
+      --mint:#8ee6b8;
+      --yellow:#ffd86b;
+      --peach:#ffb38a;
+      --bg:#fff8fc;
+      --ink:#3b2e4a;
+      --soft:#ffffff;
+      --line:#ead9f4;
+      --shadow:0 10px 24px rgba(103,72,136,.12);
+      --radius:22px;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: Arial, Helvetica, sans-serif;
+      background:linear-gradient(180deg,#fff8fc 0%,#f9fbff 100%);
+      color:var(--ink);
+    }
+    .page{
+      max-width:1100px;
+      margin:0 auto;
+      padding:24px;
+    }
+    .hero{
+      background:linear-gradient(135deg,var(--pink),var(--purple),var(--blue));
+      color:white;
+      border-radius:30px;
+      padding:28px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero h1{margin:0 0 8px;font-size:42px;line-height:1.05}
+    .hero p{margin:0;font-size:20px;max-width:700px}
+    .bubble{
+      position:absolute;border-radius:999px;opacity:.2;background:white;
+    }
+    .b1{width:140px;height:140px;right:-20px;top:-20px}
+    .b2{width:90px;height:90px;right:140px;bottom:-10px}
+    .b3{width:60px;height:60px;left:55%;top:18px}
+    .grid{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    .card{
+      background:var(--soft);
+      border:3px solid var(--line);
+      border-radius:var(--radius);
+      padding:18px;
+      box-shadow:var(--shadow);
+      break-inside:avoid;
+    }
+    .card h2{
+      margin:0 0 12px;
+      font-size:26px;
+    }
+    .tiny{font-size:14px;color:#6a5a7d}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{
+      padding:8px 12px;
+      border-radius:999px;
+      font-weight:bold;
+      font-size:14px;
+      border:2px solid rgba(59,46,74,.08);
+    }
+    .pink{background:#ffd2e5}
+    .purple{background:#e1d8ff}
+    .blue{background:#d9f2ff}
+    .mint{background:#d9f8e7}
+    .yellow{background:#fff0b5}
+    .peach{background:#ffe0cf}
+    .check-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .lane{
+      border-radius:18px;
+      padding:14px;
+      border:3px dashed rgba(59,46,74,.12);
+    }
+    .lane h3{margin:0 0 10px;font-size:20px}
+    label{display:flex;gap:10px;align-items:flex-start;margin:8px 0;font-size:18px;line-height:1.25}
+    input[type="checkbox"]{width:20px;height:20px;margin-top:2px}
+    .schedule-table{
+      width:100%;border-collapse:separate;border-spacing:0 10px;
+    }
+    .schedule-table td,.schedule-table th{
+      padding:12px 10px;
+      background:#fff;
+      border-top:2px solid var(--line);
+      border-bottom:2px solid var(--line);
+      font-size:18px;
+    }
+    .schedule-table th{background:#f7effd;font-size:16px;text-transform:uppercase;letter-spacing:.04em}
+    .schedule-table td:first-child,.schedule-table th:first-child{border-left:2px solid var(--line);border-radius:14px 0 0 14px}
+    .schedule-table td:last-child,.schedule-table th:last-child{border-right:2px solid var(--line);border-radius:0 14px 14px 0}
+    .time{font-weight:bold;white-space:nowrap}
+    .boxcol{width:80px;text-align:center}
+    .mini{
+      display:grid;grid-template-columns:repeat(2,1fr);gap:12px;
+    }
+    .note{
+      min-height:95px;background:#fff;border:3px dashed var(--line);border-radius:18px;padding:12px;font-size:18px;
+    }
+    .footer{margin-top:18px;text-align:center;font-size:14px;color:#7b6c8d}
+    @media print{
+      body{background:white}
+      .page{max-width:none;padding:10px}
+      .card,.hero{box-shadow:none}
+      input[type="checkbox"]{accent-color:#7a49ff}
+      .grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:900px){
+      .grid,.check-grid,.mini{grid-template-columns:1fr}
+      .hero h1{font-size:34px}
+      .hero p{font-size:18px}
+      label,.schedule-table td{font-size:16px}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="bubble b1"></div><div class="bubble b2"></div><div class="bubble b3"></div>
+      <h1>My Daily Boredom-Fighter Plan</h1>
+      <p>I am creative, active, social, and helpful. I can bounce to a new thing when I get bored and still have a great day.</p>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>My Favorite Things</h2>
+        <div class="chips">
+          <span class="chip pink">TV time</span>
+          <span class="chip peach">Dolls' hair</span>
+          <span class="chip mint">Gymnastics</span>
+          <span class="chip blue">Call Aunt Kiki</span>
+          <span class="chip purple">Call Nalani</span>
+          <span class="chip purple">Call Eliza</span>
+          <span class="chip yellow">Draw art</span>
+          <span class="chip pink">YouTube videos</span>
+          <span class="chip blue">Reading</span>
+          <span class="chip mint">Playing teacher</span>
+          <span class="chip peach">Zigazoo-style videos</span>
+          <span class="chip yellow">Rubber band bracelets</span>
+          <span class="chip mint">Exercise</span>
+          <span class="chip blue">Bike days</span>
+          <span class="chip blue">Pool days</span>
+          <span class="chip peach">Board games with Dad</span>
+          <span class="chip peach">Video games with Dad</span>
+          <span class="chip mint">Workout with Dad</span>
+          <span class="chip yellow">Wash dishes with Dad</span>
+          <span class="chip purple">Edit in VN</span>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>My Bounce Rules</h2>
+        <label><input type="checkbox"> I do each activity for <strong>20 minutes</strong>.</label>
+        <label><input type="checkbox"> If I get bored, I try <strong>5 more minutes</strong>.</label>
+        <label><input type="checkbox"> If I still feel bored, I switch to a different lane.</label>
+        <label><input type="checkbox"> I do not stay in the same lane more than 2 times in a row.</label>
+        <label><input type="checkbox"> If I skip something, I move it to a later block.</label>
+        <label><input type="checkbox"> Before TV or games, I try to finish 1 Move, 1 Create, 1 Think, and 1 Help activity.</label>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>My Activity Lanes</h2>
+      <div class="check-grid">
+        <div class="lane" style="background:#d9f8e7;">
+          <h3>🏃 Move</h3>
+          <label><input type="checkbox"> Gymnastics stretching</label>
+          <label><input type="checkbox"> Workout with Dad</label>
+          <label><input type="checkbox"> Bike practice</label>
+          <label><input type="checkbox"> Pool time</label>
+          <label><input type="checkbox"> Dance or kid exercise</label>
+        </div>
+        <div class="lane" style="background:#ffd2e5;">
+          <h3>🎨 Create</h3>
+          <label><input type="checkbox"> Do my dolls' hair</label>
+          <label><input type="checkbox"> Draw art</label>
+          <label><input type="checkbox"> Make bracelets</label>
+          <label><input type="checkbox"> Record a YouTube video</label>
+          <label><input type="checkbox"> Edit or plan in VN</label>
+        </div>
+        <div class="lane" style="background:#d9f2ff;">
+          <h3>🧠 Think</h3>
+          <label><input type="checkbox"> Read a book</label>
+          <label><input type="checkbox"> Play teacher</label>
+          <label><input type="checkbox"> Write video ideas</label>
+          <label><input type="checkbox"> Make a doll school or story</label>
+          <label><input type="checkbox"> Call Aunt Kiki, Nalani, or Eliza</label>
+        </div>
+        <div class="lane" style="background:#fff0b5;">
+          <h3>⭐ Help</h3>
+          <label><input type="checkbox"> Wash dishes with Dad</label>
+          <label><input type="checkbox"> Clean my room</label>
+          <label><input type="checkbox"> Pick up toys</label>
+          <label><input type="checkbox"> Wipe table or counters</label>
+          <label><input type="checkbox"> Help put things away</label>
+        </div>
+      </div>
+    </section>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>My Daily Schedule</h2>
+      <p class="tiny">Start between 10:30 and 11:00. Tuesday, Thursday, and Saturday can be bike or pool days.</p>
+      <table class="schedule-table">
+        <tr><th>Time</th><th>Plan</th><th class="boxcol">Done</th></tr>
+        <tr><td class="time">10:30-11:00</td><td>Wake up, get dressed, brush teeth, fix hair, make bed</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">11:00-11:20</td><td>Snack or early lunch + pick first activity</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">11:20-11:40</td><td>Move block: gymnastics, stretching, dance, bike, or pool</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">11:45-12:05</td><td>Create block: dolls' hair, art, bracelets, or filming</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">12:10-12:30</td><td>Think block: reading, playing teacher, story ideas, or phone call</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">12:35-12:55</td><td>Help block: dishes with Dad, room pickup, table, or toys</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">1:00-1:20</td><td>Create block: YouTube video, doll show, draw, or VN planning</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">1:25-1:45</td><td>Move block: workout with Dad, gymnastics, bike, pool, or exercise</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">1:45-2:00</td><td>Break: water, bathroom, snack, rest</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">2:00-2:20</td><td>Think block: read, teacher play, call family/friends, or video ideas</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">2:25-2:45</td><td>Create block: edit in VN, bracelets, dolls, or art</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">2:50-3:10</td><td>Help or family block: dishes, clean small space, board game, or video game with Dad</td><td class="boxcol">☐</td></tr>
+        <tr><td class="time">3:10-3:30</td><td>Fun choice: TV, free play, or favorite extra activity</td><td class="boxcol">☐</td></tr>
+      </table>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>What I Do If I Skip Something</h2>
+        <label><input type="checkbox"> If I skip <strong>Move</strong>, I do 10 minutes of stretching later.</label>
+        <label><input type="checkbox"> If I skip <strong>Create</strong>, I write down 1 fun idea.</label>
+        <label><input type="checkbox"> If I skip <strong>Think</strong>, I read or plan for 5 minutes.</label>
+        <label><input type="checkbox"> If I skip <strong>Help</strong>, I do it before TV or games.</label>
+      </section>
+
+      <section class="card">
+        <h2>My YouTube + VN Practice</h2>
+        <label><input type="checkbox"> Film a fun intro</label>
+        <label><input type="checkbox"> Use good light</label>
+        <label><input type="checkbox"> Keep the video short and clear</label>
+        <label><input type="checkbox"> Trim boring parts in VN</label>
+        <label><input type="checkbox"> Add text on screen</label>
+        <label><input type="checkbox"> Add music or sound effects with Dad's help</label>
+        <label><input type="checkbox"> Watch it before saving</label>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px;">
+      <h2>My Best Video Ideas</h2>
+      <div class="mini">
+        <div class="note">☐ Doll gymnastics challenge</div>
+        <div class="note">☐ Doll hair makeover</div>
+        <div class="note">☐ Teacher skit</div>
+        <div class="note">☐ Bracelet challenge</div>
+        <div class="note">☐ Draw with me</div>
+        <div class="note">☐ Day in my life</div>
+        <div class="note">☐ Workout with Dad</div>
+        <div class="note">☐ Pool day or bike day vlog</div>
+      </div>
+    </section>
+
+    <div class="grid">
+      <section class="card">
+        <h2>Today I Finished</h2>
+        <label><input type="checkbox"> 1 Move activity</label>
+        <label><input type="checkbox"> 1 Create activity</label>
+        <label><input type="checkbox"> 1 Think activity</label>
+        <label><input type="checkbox"> 1 Help activity</label>
+        <label><input type="checkbox"> I bounced instead of staying bored</label>
+      </section>
+      <section class="card">
+        <h2>I Feel Proud Because...</h2>
+        <div class="note"></div>
+        <div class="note" style="margin-top:12px;"></div>
+      </section>
+    </div>
+
+    <div class="footer">Print this page and check the boxes with pencil, pen, or markers.</div>
+  </div>
+</body>
+</html>
